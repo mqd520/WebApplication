@@ -6,6 +6,12 @@ local.properties
 bin-debug/
 bin-release/
 dist/
+bin/
+obj/
 
 # Other files
 *.swc
+/WebApplication.sln.DotSettings.user
+/.vs
+*.csproj.user
+/*/Properties/PublishProfiles

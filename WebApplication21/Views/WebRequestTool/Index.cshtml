@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>WebRequestToolController/Index</h1>
+<p>
+    <h4><a href="~/WebRequestTool/IsAjaxRequest" target="_blank">~/WebRequestTool/IsAjaxRequest</a></h4>
+    <h4><a href="javascript:void(0);" id="IsAjaxRequest">~/WebRequestTool/IsAjaxRequest</a></h4>
+    @section Scripts {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#IsAjaxRequest").click(function () {
+                    $.ajax("./IsAjaxRequest", {
+                        type: "GET",
+                        success: function (data, textStatus, jqXHR) {
+                            alert(data);
+                        }
+                    });
+                });
+            });
+        </script>
+    }
+</p>
+<p><h4><a href="~/WebRequestTool/GetRealClientIp" target="_blank">~/WebRequestTool/GetRealClientIp</a></h4></p>

@@ -1,0 +1,15 @@
+@WebApplication24_HostAddress = http://localhost:5276/api
+
+GET {{WebApplication24_HostAddress}}/User/
+Accept: application/json
+###
+
+
+GET {{WebApplication24_HostAddress}}/User/123
+Accept: application/json
+###
+
+
+GET {{WebApplication24_HostAddress}}/User/Username1001
+Accept: application/json
+###

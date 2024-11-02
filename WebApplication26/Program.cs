@@ -95,15 +95,15 @@ namespace WebApplication26
             var configuration = builder.Configuration as IConfiguration;
             var connectionString = configuration["ConnectionString"];
 
-            #region Inject DAO
-            builder.Services.AddScoped<ICustomerDAO, CustomerDAO>();
-            #endregion
-
             #region Inject DbContext
             builder.Services.AddDbContext<ApplicationDbContext>((provider, options) =>
             {
                 options.UseMySQL(connectionString!).EnableSensitiveDataLogging();
             });
+            #endregion
+
+            #region Inject DAO
+            builder.Services.AddScoped<ICustomerDAO, CustomerDAO>();
             #endregion
 
             #region Inject UnitOfWork

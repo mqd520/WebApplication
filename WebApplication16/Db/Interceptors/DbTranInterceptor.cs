@@ -4,7 +4,7 @@ using Castle.DynamicProxy;
 
 using WebApplication16.Tools;
 
-namespace WebApplication16.Interceptors
+namespace WebApplication16.Db.Interceptors
 {
     public class DbTranInterceptor : IInterceptor
     {

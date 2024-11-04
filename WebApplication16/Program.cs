@@ -5,9 +5,9 @@ using Autofac.Extras.DynamicProxy;
 using SqlSugar;
 
 using WebApplication16.Db;
+using WebApplication16.Db.Interceptors;
 using WebApplication16.Db.Repository;
 using WebApplication16.Db.Repository.Implements;
-using WebApplication16.Interceptors;
 
 namespace WebApplication16
 {
@@ -17,24 +17,9 @@ namespace WebApplication16
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-            builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
-            {
-                containerBuilder.RegisterType<SqlSugarHelperLogger>().SingleInstance();
-                containerBuilder.RegisterType(typeof(DbTranInterceptor));
-                containerBuilder.RegisterGeneric(typeof(BaseRepository<>));
-                containerBuilder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>))
-                    .InterceptedBy(typeof(DbTranInterceptor))
-                    .EnableInterfaceInterceptors();
-            });
-
             builder.Services.AddHttpContextAccessor();
-            builder.Services.AddSingleton<ISqlSugarClient>(s =>
-            {
-                SqlSugarHelper.ServiceProvider = s;
-                var connectingString = builder.Configuration.GetValue<string>("DbConnection");
-                return SqlSugarHelper.GetSqlSugarScope(connectingString ?? "");
-            });
+
+            InitAll3rdService(builder);
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -57,6 +42,41 @@ namespace WebApplication16
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+        }
+
+        static void InitAll3rdService(WebApplicationBuilder builder)
+        {
+            InitAutofac(builder);
+            InitDbService(builder);
+        }
+
+        static void InitAutofac(WebApplicationBuilder builder)
+        {
+            builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+        }
+
+        static void InitDbService(WebApplicationBuilder builder)
+        {
+            #region Inject SqlSugarCore
+            builder.Services.AddSingleton<ISqlSugarClient>(provider =>
+            {
+                SqlSugarHelper.ServiceProvider = provider;
+                var connectingString = builder.Configuration.GetValue<string>("DbConnection");
+                return SqlSugarHelper.GetSqlSugarScope(connectingString ?? "");
+            });
+            builder.Services.AddSingleton<SqlSugarHelperLogger>();
+            #endregion
+
+            #region Inject Repo
+            builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+            {
+                containerBuilder.RegisterGeneric(typeof(BaseRepository<>));
+                containerBuilder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>))
+                    .InterceptedBy(typeof(DbTranInterceptor))
+                    .EnableInterfaceInterceptors();
+                containerBuilder.RegisterType(typeof(DbTranInterceptor));
+            });
+            #endregion
         }
     }
 }

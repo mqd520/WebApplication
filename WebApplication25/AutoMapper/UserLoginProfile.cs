@@ -10,7 +10,8 @@ namespace WebApplication25.AutoMapper
         public UserLoginProfile()
         {
             CreateMap<UserLoginRequestVO, UserLoginRequestDTO>();
-            CreateMap<UserLoginResultDTO, UserLoginResultVO>().ForMember(dest => dest.Success, opt => opt.MapFrom<CustomConverter>());
+            CreateMap<UserLoginResultDTO, UserLoginResultVO>()
+                .ForMember(dest => dest.Success, opt => opt.MapFrom<CustomConverter>());
         }
     }
 

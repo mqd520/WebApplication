@@ -25,8 +25,6 @@ namespace WebApplication16.Controllers
 
         public IActionResult QueryAll()
         {
-            _baseRepository.Test();
-
             var ls = _baseRepository2.GetList();
             return new JsonResult(ls);
         }

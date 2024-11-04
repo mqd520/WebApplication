@@ -1,5 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+
+using Microsoft.AspNetCore.Mvc;
+
 using WebApplication2.Models;
 
 namespace WebApplication2.Controllers

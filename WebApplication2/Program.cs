@@ -5,8 +5,6 @@ namespace WebApplication2
 {
     public class Program
     {
-        private static ILogger<Program>? _logger;
-
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -21,8 +19,6 @@ namespace WebApplication2
 
             var app = builder.Build();
 
-            _logger = app.Services.GetRequiredService<ILogger<Program>>();
-
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -33,7 +29,7 @@ namespace WebApplication2
                 app.UseExceptionHandler(builder =>
                 {
                     var instance = app.Services.GetRequiredService<GlobalExceptionHandler>();
-                    builder.Use(instance.ExceptionHandler);
+                    builder.Use(instance.HandleAllExceptions);
                 });
             }
 

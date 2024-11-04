@@ -11,33 +11,44 @@ namespace WebApplication2.Exceptions
             _logger = logger;
         }
 
-        public async Task ExceptionHandler(HttpContext context, Func<Task> next)
+        public async Task HandleAllExceptions(HttpContext context, Func<Task> next)
         {
             var exceptionDetails = context.Features.Get<IExceptionHandlerFeature>();
             var ex = exceptionDetails?.Error;
-            _logger.LogError(ex, "GlobalExceptionHandler.ExceptionHandler");
+            _logger.LogError(ex, "GlobalExceptionHandler.HandleAllExceptions");
 
             if (ex is not null)
             {
-                if (ex is NullReferenceException)
+                if (ex is CustomBusinessException)
                 {
-                    await HandleSystemException(context, ex);
+                    await HandleCustomBusinessException(context, next, ex);
                 }
                 else
                 {
-                    await HandleSystemException(context, ex);
+                    await HandleException(context, next, ex);
                 }
             }
             else
             {
-                await HandleSystemException(context, default);
+                await HandleException(context, next, default);
             }
         }
 
-        private async Task HandleSystemException(HttpContext context, Exception? ex)
+        private async Task HandleException(HttpContext context
+            , Func<Task> next
+            , Exception? ex)
         {
             context.Response.StatusCode = 500;
             context.Response.ContentType = "text/html;charset=utf-8";
+            await context.Response.WriteAsync("Server Error!");
+        }
+
+        private async Task HandleCustomBusinessException(HttpContext context
+            , Func<Task> next
+            , Exception? ex)
+        {
+            context.Response.StatusCode = 200;
+            context.Response.ContentType = "application/json;charset=utf-8";
             await context.Response.WriteAsync("Server Error!");
         }
     }

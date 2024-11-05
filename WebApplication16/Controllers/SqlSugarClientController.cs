@@ -2,6 +2,8 @@
 
 using SqlSugar;
 
+using WebApplication16.Db.Entity;
+
 namespace WebApplication16.Controllers
 {
     public class SqlSugarClientController : Controller
@@ -22,6 +24,12 @@ namespace WebApplication16.Controllers
         {
             var text = _sqlSugarClient.CurrentConnectionConfig.ConnectionString;
             return new ContentResult { Content = text };
+        }
+
+        public IActionResult GetAllCustomers()
+        {
+            var ls = _sqlSugarClient.Queryable<CustomerEntity>().ToList();
+            return new JsonResult(ls);
         }
     }
 }

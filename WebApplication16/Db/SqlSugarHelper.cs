@@ -7,9 +7,9 @@ namespace WebApplication16.Db
     /// </summary>
     public static class SqlSugarHelper
     {
-        public static IServiceProvider? ServiceProvider { get; set; }
+        public static IServiceProvider ServiceProvider { get; set; } = default!;
 
-        public static SqlSugarScope GetSqlSugarScope(string connectingString)
+        public static SqlSugarScope CreateSqlSugarScope(string connectingString)
         {
             var sqlSugarScope = new SqlSugarScope(new ConnectionConfig()
             {
@@ -27,9 +27,8 @@ namespace WebApplication16.Db
 
         private static void OnLogExecuting(string sql, SugarParameter[] paras)
         {
-            var httpContextAccessor = ServiceProvider?.GetService<IHttpContextAccessor>();
-            var logger = httpContextAccessor?.HttpContext?.RequestServices.GetService<SqlSugarHelperLogger>();
-            logger?.Log(sql);
+            var service = ServiceProvider.GetRequiredService<SqlSugarLogger>();
+            service.Log(sql);
         }
 
         private static void OnLogExecuted(string sql, SugarParameter[] paras)
@@ -38,11 +37,11 @@ namespace WebApplication16.Db
         }
     }
 
-    public class SqlSugarHelperLogger
+    public class SqlSugarLogger
     {
-        private readonly ILogger<SqlSugarHelperLogger> _logger;
+        private readonly ILogger<SqlSugarLogger> _logger;
 
-        public SqlSugarHelperLogger(ILogger<SqlSugarHelperLogger> logger)
+        public SqlSugarLogger(ILogger<SqlSugarLogger> logger)
         {
             _logger = logger;
         }

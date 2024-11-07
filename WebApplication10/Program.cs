@@ -6,6 +6,8 @@ namespace WebApplication10
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddDataProtection();
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 

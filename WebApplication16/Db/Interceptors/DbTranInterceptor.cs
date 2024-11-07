@@ -2,6 +2,7 @@
 
 using Castle.DynamicProxy;
 
+using WebApplication16.Db.Tran;
 using WebApplication16.Tools;
 
 namespace WebApplication16.Db.Interceptors
@@ -9,10 +10,13 @@ namespace WebApplication16.Db.Interceptors
     public class DbTranInterceptor : IInterceptor
     {
         private readonly ILogger<DbTranInterceptor> _logger;
+        private readonly IUnitOfWorkManage _unitOfWorkManage;
 
-        public DbTranInterceptor(ILogger<DbTranInterceptor> logger)
+        public DbTranInterceptor(ILogger<DbTranInterceptor> logger
+            , IUnitOfWorkManage unitOfWorkManage)
         {
             _logger = logger;
+            _unitOfWorkManage = unitOfWorkManage;
         }
 
         public void Intercept(IInvocation invocation)
@@ -23,6 +27,7 @@ namespace WebApplication16.Db.Interceptors
                 try
                 {
                     Console.WriteLine("DbTranInterceptor: Begin Transaction");
+                    _unitOfWorkManage.BeginTran();
 
                     invocation.Proceed();
 
@@ -36,11 +41,13 @@ namespace WebApplication16.Db.Interceptors
                     }
 
                     Console.WriteLine("DbTranInterceptor: Commit Transaction");
+                    _unitOfWorkManage.CommitTran();
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex.ToString());
                     Console.WriteLine("DbTranInterceptor: Rollback Transaction");
+                    _unitOfWorkManage.RollbackTran();
                     throw;
                 }
             }

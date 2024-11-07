@@ -2,7 +2,7 @@
 
 namespace WebApplication26.Db.Service
 {
-    public interface ICustomerService
+    public interface ICustomerService : IBaseService<CustomerEntity>
     {
         CustomerEntity GetByCompanyName(string companyName);
 

@@ -6,17 +6,13 @@ using WebApplication26.Db.Trans;
 
 namespace WebApplication26.Db.Service.Implement
 {
-    public class CustomerService : ICustomerService
+    public class CustomerService : BaseService<CustomerEntity>, ICustomerService
     {
-        private readonly ApplicationDbContext _dbContext;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IRepository<CustomerEntity> _repo;
-
-        public CustomerService(ApplicationDbContext dbContext, IUnitOfWork unitOfWork)
+        public CustomerService(ApplicationDbContext dbContext
+            , IUnitOfWork unitOfWork)
+            : base(dbContext, unitOfWork)
         {
-            _dbContext = dbContext;
-            _unitOfWork = unitOfWork;
-            _repo = unitOfWork.GetRepository<CustomerEntity>();
+
         }
 
         public CustomerEntity GetByCompanyName(string companyName)
@@ -32,9 +28,9 @@ namespace WebApplication26.Db.Service.Implement
                 CustomerID = "ANTON",
                 CompanyName = "Antonio Moreno Taquera 123"
             };
-            _dbContext.Attach(entity);
-            _dbContext.Entry<CustomerEntity>(entity).Property(x => x.CompanyName).IsModified = true;
-            _dbContext.SaveChanges();
+            _context.Attach(entity);
+            _context.Entry<CustomerEntity>(entity).Property(x => x.CompanyName).IsModified = true;
+            _context.SaveChanges();
         }
     }
 }

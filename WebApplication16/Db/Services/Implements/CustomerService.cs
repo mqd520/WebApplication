@@ -1,4 +1,5 @@
 ﻿using WebApplication16.Db.Entity;
+using WebApplication16.Db.Interceptors;
 using WebApplication16.Db.Repository;
 
 namespace WebApplication16.Db.Services.Implements
@@ -17,15 +18,22 @@ namespace WebApplication16.Db.Services.Implements
             return _baseRepo.GetById(customerId);
         }
 
-        //[UseDbTran]
+        [UseDbTran]
         public virtual void TestTran()
         {
             var entity = new CustomerEntity
             {
-                CompanyName = "Berglunds snabbkp 123",
+                CompanyName = "Berglunds snabbkp " + DateTime.Now.ToString("mm:ss.fff"),
                 CustomerID = "BERGS"
             };
             var result = _repo.AsUpdateable(entity).UpdateColumns(x => new { x.CompanyName }).ExecuteCommand();
+
+            var entity2 = new CustomerEntity
+            {
+                CompanyName = "Blauer See Delikatessen Blauer See Delikatessen Blauer See Delikatessen Blauer See Delikatessen " + DateTime.Now.ToString("mm:ss.fff"),
+                CustomerID = "BLAUS"
+            };
+            var result2 = _repo.AsUpdateable(entity2).UpdateColumns(x => new { x.CompanyName }).ExecuteCommand();
         }
     }
 }

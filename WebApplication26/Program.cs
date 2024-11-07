@@ -1,3 +1,5 @@
+using System.Reflection;
+
 using Arch.EntityFrameworkCore.UnitOfWork;
 
 using Autofac;
@@ -7,11 +9,7 @@ using Autofac.Extras.DynamicProxy;
 using Microsoft.EntityFrameworkCore;
 
 using WebApplication26.Db.Contexts;
-using WebApplication26.Db.DAO;
-using WebApplication26.Db.DAO.Implement;
 using WebApplication26.Db.Interceptors;
-using WebApplication26.Db.Service;
-using WebApplication26.Db.Service.Implement;
 using WebApplication26.Db.Trans;
 
 namespace WebApplication26
@@ -103,7 +101,16 @@ namespace WebApplication26
             #endregion
 
             #region Inject DAO
-            builder.Services.AddScoped<ICustomerDAO, CustomerDAO>();
+            /*builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+            {
+                containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                                .PublicOnly()
+                                .Where(x => x.Namespace?.StartsWith("WebApplication26.Db.DAO.Implement") ?? false
+                                            && x.IsClass
+                                            && x.Name.EndsWith("DAO"))
+                                .AsImplementedInterfaces()
+                                .InstancePerLifetimeScope();
+            });*/
             #endregion
 
             #region Inject UnitOfWork
@@ -124,9 +131,15 @@ namespace WebApplication26
             #region Inject Db Service
             builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
             {
-                containerBuilder.RegisterType<CustomerService>().As<ICustomerService>()
-                                .EnableInterfaceInterceptors()
-                                .InterceptedBy(typeof(DbTranInterceptor));
+                containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                                .PublicOnly()
+                                .Where(x => x.Namespace?.StartsWith("WebApplication26.Db.Service.Implement") ?? false
+                                            && x.IsClass
+                                            && x.Name.EndsWith("Service"))
+                                .AsImplementedInterfaces()
+                                .InstancePerLifetimeScope()
+                                .InterceptedBy(typeof(DbTranInterceptor))
+                                .EnableInterfaceInterceptors();
             });
             #endregion
         }

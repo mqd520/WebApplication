@@ -8,6 +8,7 @@ using SqlSugar;
 
 using WebApplication16.Db;
 using WebApplication16.Db.Interceptors;
+using WebApplication16.Db.Tran;
 
 namespace WebApplication16
 {
@@ -93,6 +94,10 @@ namespace WebApplication16
 
             #region Inject Interceptor
             builder.Services.AddScoped<DbTranInterceptor>();
+            #endregion
+
+            #region Inject UnitOfWorkManage
+            builder.Services.AddSingleton<IUnitOfWorkManage, UnitOfWorkManage>();
             #endregion
 
             #region Inject Db Service

@@ -1,6 +1,6 @@
-﻿namespace WebApplication12.DTO
+﻿namespace WebApplication12.VO
 {
-    public class UserLoginInfoDTO
+    public class UserLoginInfoVO
     {
         public string Username { get; set; } = string.Empty;
 

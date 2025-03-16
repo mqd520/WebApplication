@@ -8,10 +8,10 @@ namespace WebApplication12
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            InitFluentValidation(builder);
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
-            builder.Services.AddValidatorsFromAssemblyContaining<Program>(ServiceLifetime.Scoped);
 
             var app = builder.Build();
 
@@ -31,6 +31,11 @@ namespace WebApplication12
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+        }
+
+        static void InitFluentValidation(WebApplicationBuilder builder)
+        {
+            builder.Services.AddValidatorsFromAssemblyContaining<Program>(ServiceLifetime.Scoped);
         }
     }
 }

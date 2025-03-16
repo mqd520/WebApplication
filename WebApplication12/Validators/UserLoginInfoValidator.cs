@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 
-using WebApplication12.DTO;
+using WebApplication12.VO;
 using WebApplication12.Tools;
 
 namespace WebApplication12.Validators
 {
-    public class UserLoginInfoValidator : AbstractValidator<UserLoginInfoDTO>
+    public class UserLoginInfoValidator : AbstractValidator<UserLoginInfoVO>
     {
         public UserLoginInfoValidator()
         {

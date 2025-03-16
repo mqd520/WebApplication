@@ -1,9 +1,7 @@
-﻿using FluentValidation;
+﻿using Microsoft.AspNetCore.Mvc;
 
-using Microsoft.AspNetCore.Mvc;
-
-using WebApplication12.DTO;
 using WebApplication12.Validators;
+using WebApplication12.VO;
 
 namespace WebApplication12.Controllers
 {
@@ -25,7 +23,7 @@ namespace WebApplication12.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(UserLoginInfoDTO userLoginInfoDTO)
+        public IActionResult Login(UserLoginInfoVO userLoginInfoDTO)
         {
             var result = _userLoginValidator.Validate(userLoginInfoDTO);
             if (result.IsValid)
@@ -38,7 +36,7 @@ namespace WebApplication12.Controllers
             }
         }
 
-        public IActionResult Login2(UserLoginInfo2DTO userLoginInfo2DTO)
+        public IActionResult Login2(UserLoginInfo2VO userLoginInfo2DTO)
         {
             var result = _userLogin2Validator.Validate(userLoginInfo2DTO);
             if (result.IsValid)

@@ -11,16 +11,12 @@ namespace WebApplication13
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddHttpContextAccessor();
-
-            // Add services to the container.
-            builder.Services.AddControllersWithViews(options =>
-            {
-
-            });
-
             builder.Services.AddSingleton<GlobalExceptionHandler>();
 
-            builder.Services.AddValidatorsFromAssemblyContaining<Program>(ServiceLifetime.Scoped);
+            InitFluentValidation(builder);
+
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
@@ -51,6 +47,11 @@ namespace WebApplication13
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+        }
+
+        static void InitFluentValidation(WebApplicationBuilder builder)
+        {
+            builder.Services.AddValidatorsFromAssemblyContaining<Program>(ServiceLifetime.Scoped);
         }
     }
 }

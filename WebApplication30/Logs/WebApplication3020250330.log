@@ -1,0 +1,134 @@
+2025-03-30 15:54:04.812 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-30 15:54:04.988 +08:00 [INF] Now listening on: http://localhost:5196
+2025-03-30 15:54:05.017 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-30 15:54:05.018 +08:00 [INF] Hosting environment: Development
+2025-03-30 15:54:05.019 +08:00 [INF] Content root path: D:\Demo\C#\Web\WebApplication\WebApplication30
+2025-03-30 15:54:05.614 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/ - null null
+2025-03-30 15:54:05.748 +08:00 [INF] Executing endpoint 'WebApplication30.Controllers.HomeController.Index (WebApplication30)'
+2025-03-30 15:54:05.774 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApplication30.Controllers.HomeController (WebApplication30).
+2025-03-30 15:54:05.782 +08:00 [INF] Executing ViewResult, running view Index.
+2025-03-30 15:54:05.848 +08:00 [INF] Executed ViewResult - view Index executed in 66.4646ms.
+2025-03-30 15:54:05.854 +08:00 [INF] Executed action WebApplication30.Controllers.HomeController.Index (WebApplication30) in 77.3842ms
+2025-03-30 15:54:05.862 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-30 15:54:05.867 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-03-30 15:54:05.868 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-03-30 15:54:05.870 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/lib/jquery/dist/jquery.min.js - null null
+2025-03-30 15:54:05.868 +08:00 [INF] Executed endpoint 'WebApplication30.Controllers.HomeController.Index (WebApplication30)'
+2025-03-30 15:54:05.868 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/WebApplication30.styles.css?v=Z-HunELaXyrGwPhJSDgITu_eLiZAeUo-qxfnMgNOdIA - null null
+2025-03-30 15:54:05.882 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/_framework/aspnetcore-browser-refresh.js - 200 16517 application/javascript; charset=utf-8 13.9071ms
+2025-03-30 15:54:05.889 +08:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-03-30 15:54:05.889 +08:00 [INF] The file /css/site.css was not modified
+2025-03-30 15:54:05.890 +08:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-03-30 15:54:05.894 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/ - 200 null text/html; charset=utf-8 285.8057ms
+2025-03-30 15:54:05.894 +08:00 [INF] The file /WebApplication30.styles.css was not modified
+2025-03-30 15:54:05.898 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-03-30 15:54:05.898 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 35.0163ms
+2025-03-30 15:54:05.899 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 304 null text/css 31.4931ms
+2025-03-30 15:54:05.901 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/lib/jquery/dist/jquery.min.js - 304 null text/javascript 30.7723ms
+2025-03-30 15:54:05.906 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2025-03-30 15:54:05.915 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/_vs/browserLink - null null
+2025-03-30 15:54:05.906 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/WebApplication30.styles.css?v=Z-HunELaXyrGwPhJSDgITu_eLiZAeUo-qxfnMgNOdIA - 304 null text/css 38.6243ms
+2025-03-30 15:54:05.909 +08:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-03-30 15:54:05.921 +08:00 [INF] The file /js/site.js was not modified
+2025-03-30 15:54:05.929 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 31.0164ms
+2025-03-30 15:54:05.933 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 304 null text/javascript 27.583ms
+2025-03-30 15:54:05.962 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.6156ms
+2025-03-30 15:54:07.111 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/Logger/Index - null null
+2025-03-30 15:54:07.124 +08:00 [INF] Executing endpoint 'WebApplication30.Controllers.LoggerController.Index (WebApplication30)'
+2025-03-30 15:54:07.126 +08:00 [INF] Route matched with {action = "Index", controller = "Logger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApplication30.Controllers.LoggerController (WebApplication30).
+2025-03-30 15:54:07.129 +08:00 [INF] Executing ViewResult, running view Index.
+2025-03-30 15:54:07.137 +08:00 [INF] Executed ViewResult - view Index executed in 9.0696ms.
+2025-03-30 15:54:07.139 +08:00 [INF] Executed action WebApplication30.Controllers.LoggerController.Index (WebApplication30) in 11.2402ms
+2025-03-30 15:54:07.140 +08:00 [INF] Executed endpoint 'WebApplication30.Controllers.LoggerController.Index (WebApplication30)'
+2025-03-30 15:54:07.142 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/Logger/Index - 200 null text/html; charset=utf-8 31.1183ms
+2025-03-30 15:54:07.149 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-30 15:54:07.153 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/_vs/browserLink - null null
+2025-03-30 15:54:07.156 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/_framework/aspnetcore-browser-refresh.js - 200 16517 application/javascript; charset=utf-8 7.177ms
+2025-03-30 15:54:07.173 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.3075ms
+2025-03-30 15:54:08.119 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/Logger/Trace - null null
+2025-03-30 15:54:08.127 +08:00 [INF] Executing endpoint 'WebApplication30.Controllers.LoggerController.Trace (WebApplication30)'
+2025-03-30 15:54:08.129 +08:00 [INF] Route matched with {action = "Trace", controller = "Logger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Trace() on controller WebApplication30.Controllers.LoggerController (WebApplication30).
+2025-03-30 15:54:08.131 +08:00 [VRB] This is a Trace log message
+2025-03-30 15:54:08.132 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2025-03-30 15:54:08.133 +08:00 [INF] Executed action WebApplication30.Controllers.LoggerController.Trace (WebApplication30) in 2.3231ms
+2025-03-30 15:54:08.135 +08:00 [INF] Executed endpoint 'WebApplication30.Controllers.LoggerController.Trace (WebApplication30)'
+2025-03-30 15:54:08.136 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/Logger/Trace - 200 2 text/plain; charset=utf-8 16.9942ms
+2025-03-30 15:54:10.145 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/Logger/Debug - null null
+2025-03-30 15:54:10.153 +08:00 [INF] Executing endpoint 'WebApplication30.Controllers.LoggerController.Debug (WebApplication30)'
+2025-03-30 15:54:10.155 +08:00 [INF] Route matched with {action = "Debug", controller = "Logger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Debug() on controller WebApplication30.Controllers.LoggerController (WebApplication30).
+2025-03-30 15:54:10.157 +08:00 [DBG] This is a Debug log message
+2025-03-30 15:54:10.158 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2025-03-30 15:54:10.159 +08:00 [INF] Executed action WebApplication30.Controllers.LoggerController.Debug (WebApplication30) in 1.9089ms
+2025-03-30 15:54:10.160 +08:00 [INF] Executed endpoint 'WebApplication30.Controllers.LoggerController.Debug (WebApplication30)'
+2025-03-30 15:54:10.162 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/Logger/Debug - 200 2 text/plain; charset=utf-8 17.1354ms
+2025-03-30 15:54:12.002 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/Logger/Warn - null null
+2025-03-30 15:54:12.009 +08:00 [INF] Executing endpoint 'WebApplication30.Controllers.LoggerController.Warn (WebApplication30)'
+2025-03-30 15:54:12.011 +08:00 [INF] Route matched with {action = "Warn", controller = "Logger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Warn() on controller WebApplication30.Controllers.LoggerController (WebApplication30).
+2025-03-30 15:54:12.013 +08:00 [WRN] This is a Warning log message
+2025-03-30 15:54:12.014 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2025-03-30 15:54:12.014 +08:00 [INF] Executed action WebApplication30.Controllers.LoggerController.Warn (WebApplication30) in 1.5032ms
+2025-03-30 15:54:12.016 +08:00 [INF] Executed endpoint 'WebApplication30.Controllers.LoggerController.Warn (WebApplication30)'
+2025-03-30 15:54:12.017 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/Logger/Warn - 200 2 text/plain; charset=utf-8 14.7163ms
+2025-03-30 15:54:13.702 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/Logger/Critical - null null
+2025-03-30 15:54:13.708 +08:00 [INF] Executing endpoint 'WebApplication30.Controllers.LoggerController.Critical (WebApplication30)'
+2025-03-30 15:54:13.710 +08:00 [INF] Route matched with {action = "Critical", controller = "Logger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Critical() on controller WebApplication30.Controllers.LoggerController (WebApplication30).
+2025-03-30 15:54:13.713 +08:00 [FTL] This is a Critical log message
+2025-03-30 15:54:13.714 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2025-03-30 15:54:13.714 +08:00 [INF] Executed action WebApplication30.Controllers.LoggerController.Critical (WebApplication30) in 1.6246ms
+2025-03-30 15:54:13.716 +08:00 [INF] Executed endpoint 'WebApplication30.Controllers.LoggerController.Critical (WebApplication30)'
+2025-03-30 15:54:13.718 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/Logger/Critical - 200 2 text/plain; charset=utf-8 15.7994ms
+2025-03-30 16:00:06.308 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-30 16:00:06.478 +08:00 [INF] Now listening on: http://localhost:5196
+2025-03-30 16:00:06.507 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-30 16:00:06.508 +08:00 [INF] Hosting environment: Development
+2025-03-30 16:00:06.509 +08:00 [INF] Content root path: D:\Demo\C#\Web\WebApplication\WebApplication30
+2025-03-30 16:00:07.642 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/ - null null
+2025-03-30 16:00:07.803 +08:00 [INF] Executing endpoint 'WebApplication30.Controllers.HomeController.Index (WebApplication30)'
+2025-03-30 16:00:07.835 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApplication30.Controllers.HomeController (WebApplication30).
+2025-03-30 16:00:07.845 +08:00 [INF] Executing ViewResult, running view Index.
+2025-03-30 16:00:07.918 +08:00 [INF] Executed ViewResult - view Index executed in 75.3883ms.
+2025-03-30 16:00:07.922 +08:00 [INF] Executed action WebApplication30.Controllers.HomeController.Index (WebApplication30) in 84.9112ms
+2025-03-30 16:00:07.923 +08:00 [INF] Executed endpoint 'WebApplication30.Controllers.HomeController.Index (WebApplication30)'
+2025-03-30 16:00:07.927 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-03-30 16:00:07.929 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/ - 200 null text/html; charset=utf-8 293.4662ms
+2025-03-30 16:00:07.938 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/lib/jquery/dist/jquery.min.js - null null
+2025-03-30 16:00:07.938 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/WebApplication30.styles.css?v=Z-HunELaXyrGwPhJSDgITu_eLiZAeUo-qxfnMgNOdIA - null null
+2025-03-30 16:00:07.933 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-03-30 16:00:07.942 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-03-30 16:00:07.946 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-30 16:00:07.947 +08:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-03-30 16:00:07.948 +08:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-03-30 16:00:07.950 +08:00 [INF] The file /WebApplication30.styles.css was not modified
+2025-03-30 16:00:07.958 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/lib/jquery/dist/jquery.min.js - 304 null text/javascript 21.2921ms
+2025-03-30 16:00:07.957 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 31.0045ms
+2025-03-30 16:00:07.952 +08:00 [INF] The file /css/site.css was not modified
+2025-03-30 16:00:07.958 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/_framework/aspnetcore-browser-refresh.js - 200 16517 application/javascript; charset=utf-8 11.5923ms
+2025-03-30 16:00:07.954 +08:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-03-30 16:00:07.965 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/WebApplication30.styles.css?v=Z-HunELaXyrGwPhJSDgITu_eLiZAeUo-qxfnMgNOdIA - 304 null text/css 28.3884ms
+2025-03-30 16:00:07.968 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/_vs/browserLink - null null
+2025-03-30 16:00:07.970 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2025-03-30 16:00:07.971 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 304 null text/css 38.7303ms
+2025-03-30 16:00:07.984 +08:00 [INF] The file /js/site.js was not modified
+2025-03-30 16:00:07.975 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 33.076ms
+2025-03-30 16:00:07.989 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 304 null text/javascript 18.0013ms
+2025-03-30 16:00:08.009 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.2661ms
+2025-03-30 16:00:09.040 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/Logger/Index - null null
+2025-03-30 16:00:09.053 +08:00 [INF] Executing endpoint 'WebApplication30.Controllers.LoggerController.Index (WebApplication30)'
+2025-03-30 16:00:09.057 +08:00 [INF] Route matched with {action = "Index", controller = "Logger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApplication30.Controllers.LoggerController (WebApplication30).
+2025-03-30 16:00:09.060 +08:00 [INF] Executing ViewResult, running view Index.
+2025-03-30 16:00:09.067 +08:00 [INF] Executed ViewResult - view Index executed in 7.4929ms.
+2025-03-30 16:00:09.069 +08:00 [INF] Executed action WebApplication30.Controllers.LoggerController.Index (WebApplication30) in 10.2509ms
+2025-03-30 16:00:09.071 +08:00 [INF] Executed endpoint 'WebApplication30.Controllers.LoggerController.Index (WebApplication30)'
+2025-03-30 16:00:09.073 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/Logger/Index - 200 null text/html; charset=utf-8 33.2648ms
+2025-03-30 16:00:09.080 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-30 16:00:09.086 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/_vs/browserLink - null null
+2025-03-30 16:00:09.088 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/_framework/aspnetcore-browser-refresh.js - 200 16517 application/javascript; charset=utf-8 7.4782ms
+2025-03-30 16:00:09.110 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.996ms
+2025-03-30 16:00:10.172 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5196/Logger/Trace - null null
+2025-03-30 16:00:10.179 +08:00 [INF] Executing endpoint 'WebApplication30.Controllers.LoggerController.Trace (WebApplication30)'
+2025-03-30 16:00:10.182 +08:00 [INF] Route matched with {action = "Trace", controller = "Logger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Trace() on controller WebApplication30.Controllers.LoggerController (WebApplication30).
+2025-03-30 16:00:10.185 +08:00 [VRB] This is a Trace log message
+2025-03-30 16:00:10.187 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2025-03-30 16:00:10.188 +08:00 [INF] Executed action WebApplication30.Controllers.LoggerController.Trace (WebApplication30) in 3.7904ms
+2025-03-30 16:00:10.189 +08:00 [INF] Executed endpoint 'WebApplication30.Controllers.LoggerController.Trace (WebApplication30)'
+2025-03-30 16:00:10.191 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5196/Logger/Trace - 200 2 text/plain; charset=utf-8 18.9939ms

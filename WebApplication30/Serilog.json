@@ -1,0 +1,36 @@
+{
+    "Serilog": {
+        "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.File", "Serilog.Sinks.Seq" ],
+        "MinimumLevel": {
+            "Default": "Information",
+            "Override": {
+                "System": "Warning",
+                "Microsoft": "Warning",
+                "Microsoft.EntityFrameworkCore": "Information",
+                "Microsoft.Hosting.Lifetime": "Information",
+                "Microsoft.AspNetCore.Mvc": "Warning",
+                "Microsoft.AspNetCore.Routing": "Warning",
+                "Microsoft.AspNetCore.Hosting": "Warning"
+            }
+        },
+        "WriteTo": [
+            {
+                "Name": "Console",
+                "Args": {
+                    "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level:u3}] [{SourceContext}] [{ThreadId}] [{ApplicationName}] [{MachineName}] {Message:lj}{NewLine}{Exception}"
+                }
+            },
+            {
+                "Name": "Seq",
+                "Args": {
+                    "apiKey": "EWlnU0Jomr59ansxgJc6",
+                    "serverUrl": "http://192.168.44.12:5341"
+                }
+            }
+        ],
+        "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ],
+        "Properties": {
+            "Application": "WebApplication30"
+        }
+    }
+}

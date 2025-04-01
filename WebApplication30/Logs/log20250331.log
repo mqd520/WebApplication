@@ -1,0 +1,80 @@
+2025-03-31 00:08:23.372 [INF] Now listening on: http://localhost:5196[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:08:23.451 [INF] Application started. Press Ctrl+C to shut down.[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:08:23.453 [INF] Hosting environment: Development[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:08:23.455 [INF] Content root path: D:\Demo\C#\Web\WebApplication\WebApplication30[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:09:15.275 [INF] Now listening on: http://localhost:5196[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:09:15.409 [INF] Application started. Press Ctrl+C to shut down.[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:09:15.414 [INF] Hosting environment: Development[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:09:15.415 [INF] Content root path: D:\Demo\C#\Web\WebApplication\WebApplication30[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:09:32.546 [INF] This is a Info log message[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:09:32.550 [INF] This is a Info log message: StringValue[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:10:24.176 [INF] This is a Info log message: {}[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:11:04.641 [INF] Now listening on: http://localhost:5196[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:11:04.716 [INF] Application started. Press Ctrl+C to shut down.[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:11:04.720 [INF] Hosting environment: Development[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:11:04.723 [INF] Content root path: D:\Demo\C#\Web\WebApplication\WebApplication30[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:11:09.503 [INF] This is a Info log message[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:11:09.507 [INF] This is a Info log message: StringValue[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:12:09.130 [INF] Now listening on: http://localhost:5196[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:12:09.189 [INF] Application started. Press Ctrl+C to shut down.[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:12:09.192 [INF] Hosting environment: Development[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:12:09.193 [INF] Content root path: D:\Demo\C#\Web\WebApplication\WebApplication30[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:12:12.958 [INF] This is a Info log message[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:12:12.962 [INF] This is a Info log message: StringValue[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:12:12.965 [INF] This is a Info log message: 1506816370@qq.com[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:12:27.973 [INF] This is a Info log message: {}[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:12:42.697 [INF] Now listening on: http://localhost:5196[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:12:42.755 [INF] Application started. Press Ctrl+C to shut down.[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:12:42.757 [INF] Hosting environment: Development[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:12:42.759 [INF] Content root path: D:\Demo\C#\Web\WebApplication\WebApplication30[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:12:45.817 [INF] This is a Info log message[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:12:45.820 [INF] This is a Info log message: StringValue[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:12:45.822 [INF] This is a Info log message: 1506816370@qq.com[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:12:46.685 [INF] This is a Info log message: {}[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:15:05.452 [INF] Now listening on: http://localhost:5196[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:15:05.513 [INF] Application started. Press Ctrl+C to shut down.[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:15:05.516 [INF] Hosting environment: Development[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:15:05.517 [INF] Content root path: D:\Demo\C#\Web\WebApplication\WebApplication30[Microsoft.Hosting.Lifetime] 
+
+2025-03-31 00:15:09.088 [INF] This is a Info log message[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:15:09.092 [INF] This is a Info log message: StringValue[WebApplication30.Controllers.LoggerController] 
+
+2025-03-31 00:15:09.094 [INF] This is a Info log message: 1506816370@qq.com[WebApplication30.Controllers.LoggerController] 
+

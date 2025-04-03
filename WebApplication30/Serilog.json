@@ -2,7 +2,7 @@
     "Serilog": {
         "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.File", "Serilog.Sinks.Seq" ],
         "MinimumLevel": {
-            "Default": "Information",
+            "Default": "Verbose",
             "Override": {
                 "System": "Warning",
                 "Microsoft": "Warning",
@@ -25,6 +25,12 @@
                 "Args": {
                     "apiKey": "EWlnU0Jomr59ansxgJc6",
                     "serverUrl": "http://192.168.44.12:5341"
+                }
+            },
+            {
+                "Name": "Exceptionless",
+                "Args": {
+                    "apiKey": "b32Ny127PJE4cmjrAfWKUZoz3egVKmpTXqnKqoDT"
                 }
             }
         ],

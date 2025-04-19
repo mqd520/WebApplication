@@ -1,0 +1,23 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/product/{url}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5000
+                }
+            ],
+            "UpstreamPathTemplate": "/api/product/{url}",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            //"ServiceName": "api-product-service",
+            "LoadBalancerOptions": {
+                "Type": "LeastConnection"
+            }
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:5001"
+    }
+}

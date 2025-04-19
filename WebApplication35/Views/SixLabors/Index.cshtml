@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>SixLaborsController/Index</h1>
+<h4><a href="./Sample" target="_blank">./Sample</a></h4>
+<h4><img id="captcha" width="111" height="36" alt="Captcha" style="border: solid 1px #cccccc;" /></h4>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function(){
+            window.setTimeout(function(){
+                $.ajax("./Sample2",{
+                    method: "GET",
+                    success: function(data, textStatus, jqXHR){
+                        $("#captcha").attr("src", data);
+                    }
+                });
+            }, 1000);
+
+            window.setTimeout(function(){
+                fetch("./Sample2")
+                .then(response => {
+                    return response.text();
+                })
+                .then(data => {
+                    $("#captcha").attr("src", data);
+                });
+            }, 3 * 1000);
+        });
+    </script>
+}

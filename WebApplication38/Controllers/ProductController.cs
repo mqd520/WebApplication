@@ -1,44 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-using WebApplication38.Dto;
+﻿using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.AspNetCore.Hosting.Server.Features;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication38.Controllers
 {
     [ApiController]
-    [Route("~/api/[Controller]")]
+    [Route("api/[Controller]")]
     public class ProductController : ControllerBase
     {
-        private static readonly IList<ProductInfo> _ls;
+        private IServer _server;
 
-        static ProductController()
+        public ProductController(IServer server)
         {
-            _ls = new List<ProductInfo>();
-            _ls.Add(new ProductInfo
-            {
-                Id = 1,
-                Name = "Product 1",
-                Description = "Description 1"
-            });
-            _ls.Add(new ProductInfo
-            {
-                Id = 2,
-                Name = "Product 2",
-                Description = "Description 2"
-            });
+            _server = server;
         }
 
         [HttpGet]
-        public IEnumerable<ProductInfo> GetAll()
+        [Route("info")]
+        public ActionResult<string> GetServerInfo()
         {
-            return _ls.AsEnumerable();
-        }
-
-        [HttpGet]
-        [Route("{productId}")]
-        public ProductInfo? GetById(int productId)
-        {
-            var item = _ls.FirstOrDefault(x => x.Id == productId);
-            return item;
+            var serverAddressesFeature = _server.Features.Get<IServerAddressesFeature>();
+            var url = serverAddressesFeature?.Addresses.First() ?? "";
+            return url;
         }
     }
 }

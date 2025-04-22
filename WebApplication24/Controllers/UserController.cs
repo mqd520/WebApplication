@@ -7,7 +7,7 @@ namespace WebApplication24.Controllers
 {
     [ApiController]
     [Route("~/api/[Controller]")]
-    public class UserController : Controller
+    public class UserController : ControllerBase
     {
         [HttpGet]
         public IList<UserInfoEntity> GetAllUsers()
@@ -15,13 +15,15 @@ namespace WebApplication24.Controllers
             return UserHelper.Users;
         }
 
-        [HttpGet("{userId:int}")]
+        [HttpGet]
+        [Route("{userId:int}")]
         public UserInfoEntity GetByUserId(int userId)
         {
             return UserHelper.Users.Where(x => x.Id == userId).FirstOrDefault()!;
         }
 
-        [HttpGet("{username}")]
+        [HttpGet]
+        [Route("username/{username}")]
         public UserInfoEntity GetByUserName(string username)
         {
             return UserHelper.Users.Where(x => x.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)).FirstOrDefault()!;

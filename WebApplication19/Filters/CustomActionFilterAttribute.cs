@@ -6,7 +6,7 @@ namespace WebApplication19.Filters
     {
         public override void OnActionExecuted(ActionExecutedContext context)
         {
-            if (context.HttpContext.Request.Path.Value.Equals("/SimulateHttpStatusCode/HttpStatusCode401"))
+            if (context.HttpContext.Request.Path.Value?.Equals("/SimulateHttpStatusCode/HttpStatusCode401") ?? false)
             {
                 context.HttpContext.Response.ContentType = "hhhhhhh";
             }

@@ -6,7 +6,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
-                    "Port": 5000
+                    "Port": 5038
                 }
             ],
             "UpstreamPathTemplate": "/api/product/{url}",
@@ -15,8 +15,45 @@
                 "Type": "LeastConnection"
             },
             "AuthenticationOptions": {
-                "AuthenticationProviderKey": "Bearer",
-                "AllowedScopes": ["api"]
+                "AuthenticationProviderKey": "ProductApiKey",
+                "AllowedScopes": []
+            },
+            "AddHeadersToRequest": {
+                "iss": "Claims[iss] > value",
+                "scope": "Claims[scope] > value[0]",
+                "exp2": "Claims[exp2] > value"
+            },
+            "AddQueriesToRequest": {
+                "aud": "Claims[aud] > value"
+            },
+            "AddClaimsToRequest": {
+                "exp2": "Claims[iss] > value",
+                "nbf2": "Claims[nbf] > value"
+            },
+            //"AuthenticationOptions": {
+            //    "AuthenticationProviderKey": "ProductApiKey",
+            //    "AllowedScopes": []
+            //}
+            "HttpHandlerOptions": {
+                "UseProxy": true
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/order/{url}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5048
+                }
+            ],
+            "UpstreamPathTemplate": "/api/order/{url}",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "LoadBalancerOptions": {
+                "Type": "LeastConnection"
+            },
+            "HttpHandlerOptions": {
+                "UseProxy": true
             }
         }
     ],

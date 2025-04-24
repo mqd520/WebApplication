@@ -16,6 +16,8 @@ namespace WebApplication38
 
             app.MapControllers();
 
+            //app.UseJwtBearerParser();
+
             app.MapGet("/", () => "Product Api");
 
             app.Run();

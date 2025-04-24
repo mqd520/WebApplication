@@ -21,7 +21,39 @@ namespace WebApplication38.Controllers
         {
             var serverAddressesFeature = _server.Features.Get<IServerAddressesFeature>();
             var url = serverAddressesFeature?.Addresses.First() ?? "";
-            return url;
+            return $"Product: {url}";
+        }
+
+        [HttpGet]
+        [Route("authorization")]
+        public ActionResult<string> GetAuthorization()
+        {
+            return Content(Request.Headers["Authorization"].ToString());
+        }
+
+        [HttpGet]
+        [Route("principal")]
+        public ActionResult<string> GetPrincipal()
+        {
+            var user = Request.HttpContext.User;
+            var identity = Request.HttpContext.User.Identity;
+            return Content("ok");
+        }
+
+        [HttpGet]
+        [Route("iss")]
+        public ActionResult<string> GetIss()
+        {
+            var iss = Request.Headers["iss"].ToString();
+            return Content(iss);
+        }
+
+        [HttpGet]
+        [Route("aud")]
+        public ActionResult<string> GetAud()
+        {
+            var iss = Request.Headers["aud"].ToString();
+            return Content(iss);
         }
     }
 }

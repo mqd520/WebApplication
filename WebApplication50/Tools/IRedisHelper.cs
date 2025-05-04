@@ -1,4 +1,4 @@
-﻿namespace WebApplication6.Tools
+﻿namespace WebApplication50.Tools
 {
     public interface IRedisHelper
     {

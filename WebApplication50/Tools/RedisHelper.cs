@@ -2,9 +2,9 @@
 
 using StackExchange.Redis;
 
-using WebApplication6.Options;
+using WebApplication50.Options;
 
-namespace WebApplication6.Tools
+namespace WebApplication50.Tools
 {
     public class RedisHelper : IRedisHelper
     {
@@ -12,16 +12,18 @@ namespace WebApplication6.Tools
         private readonly int dbIndex;
         private readonly string redisKeyPrefix;
 
-        public RedisHelper(RedisOptions? redisOptions)
+        public RedisHelper(RedisOptions redisOptions)
         {
-            connectionMultiPlexer = ConnectionMultiplexer.Connect(redisOptions?.ConnectionString.ToString() ?? "");
-            dbIndex = redisOptions?.DatabaseIndex ?? 0;
-            redisKeyPrefix = redisOptions?.InstanceName ?? "";
+            var config = new ConfigurationOptions();
+            connectionMultiPlexer = ConnectionMultiplexer.Connect(redisOptions.ConnectionString.ToString());
+            dbIndex = redisOptions.DatabaseIndex;
+            redisKeyPrefix = redisOptions.InstanceName;
         }
 
         public IDatabase GetDatabase(int db)
         {
-            return connectionMultiPlexer.GetDatabase(db);
+            var database = connectionMultiPlexer.GetDatabase(db);
+            return database;
         }
 
         public string GetRedisKey(string key)

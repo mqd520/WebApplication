@@ -9,9 +9,8 @@ namespace WebApplication6
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var redisOptions = builder.Configuration.GetSection(RedisOptions.SectionName).Get<RedisOptions>();
-            var helper = new RedisHelper(redisOptions);
-            builder.Services.AddSingleton<IRedisHelper>(helper);
+            builder.Services.Configure<RedisOptions>(builder.Configuration.GetSection(RedisOptions.SectionName));
+            builder.Services.AddSingleton<IRedisHelper, RedisHelper>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

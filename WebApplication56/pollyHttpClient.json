@@ -1,0 +1,22 @@
+{
+    "Polly": [
+        {
+            "ServiceName": [ "myHttpClient", "myHttpClient2" ],
+            "TimeoutTime": 10,
+            "RetryCount": 3,
+            "CircuitBreakerOpenFallCount": 2,
+            "CircuitBreakerDownTime": 6,
+            "HttpResponseMessage": "系统繁忙，请稍后再试！",
+            "HttpResponseStatus": 200 //降级处理响应状态码
+        },
+        {
+            "ServiceName": [ "myHttpClient3" ],
+            "TimeoutTime": 20,
+            "RetryCount": 5,
+            "CircuitBreakerOpenFallCount": 2,
+            "CircuitBreakerDownTime": 8,
+            "HttpResponseMessage": "系统繁忙，请稍后再试~！",
+            "HttpResponseStatus": 503 //降级处理响应状态码
+        }
+    ]
+}

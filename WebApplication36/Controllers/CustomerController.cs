@@ -21,7 +21,8 @@ namespace WebApplication36.Controllers
         public async Task<IActionResult> SampleAsync()
         {
             var policy = Policy.Handle<HttpRequestException>()
-                .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
+                //.WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
+                .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(10));
             var result = await policy.ExecuteAsync(async () =>
                 {
                     using HttpClient httpClient = _httpClientFactory.CreateClient("demo");
@@ -33,7 +34,7 @@ namespace WebApplication36.Controllers
 
         public async Task<IActionResult> Sample2Async()
         {
-            var policy = Policy.TimeoutAsync<string>(10);
+            var policy = Policy.TimeoutAsync(10);
             var result = await policy.ExecuteAsync(async () =>
                 {
                     using HttpClient httpClient = _httpClientFactory.CreateClient("demo");
@@ -62,8 +63,8 @@ namespace WebApplication36.Controllers
                 .CircuitBreakerAsync(2, TimeSpan.FromSeconds(30));
             var policy2 = Policy.Handle<HttpRequestException>()
                 .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
-            var policy3 = Policy.TimeoutAsync<string>(10);
-            var policies = Policy.WrapAsync(policy, policy2);
+            var policy3 = Policy.TimeoutAsync(10);
+            var policies = Policy.WrapAsync(policy, policy2, policy3);
 
             var result = await policies.ExecuteAsync(async () =>
             {

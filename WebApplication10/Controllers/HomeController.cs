@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using System.Net.Sockets;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,37 +17,6 @@ namespace WebApplication10.Controllers
 
         public IActionResult Index()
         {
-            {
-                using TcpClient tcpClient = new TcpClient();
-                try
-                {
-                    tcpClient.Connect("localhost", 4001);
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex.Message);
-                }
-                if (tcpClient.Connected)
-                {
-                    _logger.LogInformation("Connect Success!");
-                }
-            }
-
-            {
-                using var hc = new HttpClient();
-                hc.BaseAddress = new Uri("http://localhost:4001");
-                try
-                {
-                    var content = hc.GetStringAsync("/Action/Index").Result;
-                    _logger.LogInformation("http://localhost:4001 is ok!");
-                    _logger.LogInformation(content);
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex.Message);
-                }
-            }
-
             return View();
         }
 

@@ -29,7 +29,7 @@ namespace WebApplication46
                 .AddRefitClient<IUserApi>(settings)
                 .ConfigureHttpClient(hc =>
                 {
-                    hc.BaseAddress = new Uri("http://localhost:5000");
+                    hc.BaseAddress = new Uri("http://localhost:5024");
                 });
 
             var app = builder.Build();

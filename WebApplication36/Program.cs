@@ -14,6 +14,8 @@ namespace WebApplication36
                 httpClient.BaseAddress = new Uri("http://localhost:5000");
             });
 
+            builder.Services.AddPolicyRegistry();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

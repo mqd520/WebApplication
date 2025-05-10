@@ -1,8 +1,6 @@
-using Coravel;
+using Hangfire;
 
-using WebApplication57.Invocables;
-
-namespace WebApplication57
+namespace WebApplication60
 {
     public class Program
     {
@@ -13,8 +11,10 @@ namespace WebApplication57
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddHttpClient("Demo");
-            builder.Services.AddScheduler();
+            builder.Services.AddHangfire(config =>
+            {
+                config.UseSqlServerStorage("Server=localhost;Database=HangfireDB;User Id=sa;Password=your_password;");
+            });
 
             var app = builder.Build();
 
@@ -28,13 +28,6 @@ namespace WebApplication57
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.Services.UseScheduler(scheduler =>
-            {
-                scheduler.Schedule<MyInvocable2>()
-                    .EveryFiveSeconds()
-                    .RunOnceAtStart();
-            });
 
             app.MapControllerRoute(
                 name: "default",

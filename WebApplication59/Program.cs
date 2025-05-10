@@ -14,7 +14,6 @@ namespace WebApplication59
                 options.UseRabbitMQ(options =>
                 {
                     options.HostName = "192.168.44.13";
-                    options.Port = 5672;
                     options.UserName = "root";
                     options.Password = "123456";
                 });

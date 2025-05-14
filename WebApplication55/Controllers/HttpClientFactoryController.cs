@@ -32,5 +32,13 @@ namespace WebApplication55.Controllers
             var content = await response.Content.ReadAsStringAsync();
             return Content(content);
         }
+
+        public async Task<IActionResult> Sample3()
+        {
+            using var httpClient = _httpClientFactory.CreateClient("demo");
+            var response = await httpClient.GetAsync("https://www.baidu.com");
+            var content = await response.Content.ReadAsStringAsync();
+            return Content(content);
+        }
     }
 }

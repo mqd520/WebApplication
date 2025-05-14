@@ -12,8 +12,8 @@ namespace WebApplication57
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
-            builder.Services.AddHttpClient("Demo");
+            builder.Services.AddTransient<MyInvocable>();
+            builder.Services.AddTransient<MyInvocable3>();
             builder.Services.AddScheduler();
 
             var app = builder.Build();
@@ -31,9 +31,16 @@ namespace WebApplication57
 
             app.Services.UseScheduler(scheduler =>
             {
-                scheduler.Schedule<MyInvocable2>()
-                    .EveryFiveSeconds()
-                    .RunOnceAtStart();
+                //scheduler.Schedule<MyInvocable>()
+                //    .EverySeconds(35)
+                //    .RunOnceAtStart();
+
+                //scheduler.ScheduleWithParams<MyInvocable2>(5)
+                //    .EverySeconds(5)
+                //    .RunOnceAtStart();
+
+                scheduler.Schedule<MyInvocable3>()
+                    .Cron("44/2 * * * *");
             });
 
             app.MapControllerRoute(

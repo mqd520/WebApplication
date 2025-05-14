@@ -1,0 +1,27 @@
+﻿﻿<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>%(DocumentTitle)</title>
+    <link rel="stylesheet" type="text/css" href="%(StylesPath)">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    %(HeadContent)
+    <script async="async" id="mini-profiler" src="/profiler/includes.min.js?v=4.0.138+gcc91adf599"
+            data-version="4.0.138+gcc91adf599" data-path="/profiler/"
+            data-current-id="4ec7c742-49d4-4eaf-8281-3c1e0efa748a" data-ids="" data-position="Left"
+            data-authorized="true" data-max-traces="15" data-toggle-shortcut="Alt+P"
+            data-trivial-milliseconds="2.0" data-ignored-duplicate-execute-types="Open,OpenAsync,Close,CloseAsync">
+    </script>
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <script src="%(ScriptBundlePath)" charset="utf-8"></script>
+    <script src="%(ScriptPresetsPath)" charset="utf-8"></script>
+    <script src="index.js" charset="utf-8"></script>
+</body>
+</html>

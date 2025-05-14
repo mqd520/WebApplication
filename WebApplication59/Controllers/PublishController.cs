@@ -20,8 +20,9 @@ namespace WebApplication59.Controllers
 
         public async Task<IActionResult> Sample()
         {
-            await _capPublisher.PublishAsync("myName", "123456");
-            return Content("");
+            var time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fff");
+            await _capPublisher.PublishAsync("time", time);
+            return Content(time);
         }
     }
 }

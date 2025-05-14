@@ -1,0 +1,44 @@
+﻿CREATE TABLE MiniProfilers
+(
+    RowId                                integer not null auto_increment primary key,
+    Id                                   char(36) not null collate ascii_general_ci,
+    RootTimingId                         char(36) null collate ascii_general_ci,
+    Name                                 varchar(200) null,
+    Started                              datetime not null,
+    DurationMilliseconds                 decimal(15,1) not null,
+    User                                 varchar(100) null,
+    HasUserViewed                        bool not null,
+    MachineName                          varchar(100) null,
+    CustomLinksJson                      longtext,
+    ClientTimingsRedirectCount           int null,
+    UNIQUE INDEX IX_MiniProfilers_Id (Id), -- displaying results selects everything based on the main MiniProfilers.Id column
+    INDEX IX_MiniProfilers_User_HasUserViewed (User, HasUserViewed) -- speeds up a query that is called on every .Stop()
+) engine=InnoDB collate utf8mb4_bin;
+
+CREATE TABLE MiniProfilerTimings
+(
+    RowId                               integer not null auto_increment primary key,
+    Id                                  char(36) not null collate ascii_general_ci,
+    MiniProfilerId                      char(36) not null collate ascii_general_ci,
+    ParentTimingId                      char(36) null collate ascii_general_ci,
+    Name                                varchar(200) not null,
+    DurationMilliseconds                decimal(15,3) not null,
+    StartMilliseconds                   decimal(15,3) not null,
+    IsRoot                              bool not null,
+    Depth                               smallint not null,
+    CustomTimingsJson                   longtext null,
+    UNIQUE INDEX IX_MiniProfilerTimings_Id (Id),
+    INDEX IX_MiniProfilerTimings_MiniProfilerId (MiniProfilerId)
+) engine=InnoDB collate utf8mb4_bin;
+
+CREATE TABLE MiniProfilerClientTimings
+(
+    RowId                               integer not null auto_increment primary key,
+    Id                                  char(36) not null collate ascii_general_ci,
+    MiniProfilerId                      char(36) not null collate ascii_general_ci,
+    Name                                varchar(200) not null,
+    Start                               decimal(9, 3) not null,
+    Duration                            decimal(9, 3) not null,
+    UNIQUE INDEX IX_MiniProfilerClientTimings_Id (Id),
+    INDEX IX_MiniProfilerClientTimings_MiniProfilerId (MiniProfilerId)
+) engine=InnoDB collate utf8mb4_bin;

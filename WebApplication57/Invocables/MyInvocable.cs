@@ -5,19 +5,17 @@ namespace WebApplication57.Invocables
 {
     public class MyInvocable : IInvocable
     {
-        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly ILogger<MyInvocable> _logger;
 
-        public MyInvocable(IHttpClientFactory httpClientFactory)
+        public MyInvocable(ILogger<MyInvocable> logger)
         {
-            _httpClientFactory = httpClientFactory;
+            _logger = logger;
         }
 
-        public async Task Invoke()
+        public Task Invoke()
         {
-            using var httpClient = _httpClientFactory.CreateClient("Demo");
-            var response = await httpClient.GetAsync("https://www.baidu.com");
-            var content = response.Content.ReadAsStringAsync();
-            Console.WriteLine(response.StatusCode);
+            Console.WriteLine($"MyInvocable.Invoke()");
+            return Task.CompletedTask;
         }
     }
 }

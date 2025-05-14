@@ -3,6 +3,8 @@ using Flurl.Http;
 
 using Microsoft.AspNetCore.Mvc;
 
+using WebApplication71.Def;
+
 namespace WebApplication71.Controllers
 {
     public class SampleController : Controller
@@ -28,6 +30,15 @@ namespace WebApplication71.Controllers
                 .AppendPathSegments("User")
                 .GetStringAsync();
             return Content(response);
+        }
+
+        public async Task<IActionResult> Sample2()
+        {
+            var response = await _webApiAddress
+                .AppendPathSegment("api")
+                .AppendPathSegments("User")
+                .GetJsonAsync<List<UserInfo>>();
+            return Json(response);
         }
     }
 }

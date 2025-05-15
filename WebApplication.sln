@@ -305,6 +305,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 CustomServiceScopeFactor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication75", "WebApplication75\WebApplication75.csproj", "{B313F990-BB3C-4067-A423-1CA73261CDCD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "29 Mapster", "29 Mapster", "{DC6B08D7-70BC-445F-A7A6-4E8EED7F26B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication76", "WebApplication76\WebApplication76.csproj", "{9527AE3B-036E-4F55-AF4A-37BE504BF1D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -639,6 +643,10 @@ Global
 		{B313F990-BB3C-4067-A423-1CA73261CDCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B313F990-BB3C-4067-A423-1CA73261CDCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B313F990-BB3C-4067-A423-1CA73261CDCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9527AE3B-036E-4F55-AF4A-37BE504BF1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9527AE3B-036E-4F55-AF4A-37BE504BF1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9527AE3B-036E-4F55-AF4A-37BE504BF1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9527AE3B-036E-4F55-AF4A-37BE504BF1D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -765,6 +773,7 @@ Global
 		{C8A9BE30-D620-47A3-9F60-00E250576351} = {A4BAD0C2-CB41-4E5A-98D8-5ED19DC8546C}
 		{B41182BD-C4BB-455C-9ACC-4412AFF84461} = {6AA5ADDF-2B8A-44FA-90AA-7A89F730A574}
 		{B313F990-BB3C-4067-A423-1CA73261CDCD} = {B41182BD-C4BB-455C-9ACC-4412AFF84461}
+		{9527AE3B-036E-4F55-AF4A-37BE504BF1D0} = {DC6B08D7-70BC-445F-A7A6-4E8EED7F26B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9A68155-EBD1-4374-8B68-40110339BC2E}
